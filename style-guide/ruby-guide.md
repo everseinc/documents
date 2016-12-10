@@ -61,7 +61,8 @@ y = -> (x) {x * x}
 
 - Functor
 
-定義 : Functor moduleをincludeしたクラス  
+>定義 : Functor moduleをincludeしたクラス  
+
 mapをoverrideして、map処理が定義されたものをFunctorとし、Procクラスを拡張した `<=` メソッドでの記述を推奨
 
 ```ruby
@@ -75,7 +76,8 @@ f <= arr
 
 - Applicative
 
-定義 : Applicative moduleをincludeしたクラス  
+>定義 : Applicative moduleをincludeしたクラス  
+
 applicateをoverrideして、applicate処理が定義されたものをApplicativeとし、alias_methodである `>` メソッドでの記述を推奨
 
 ```ruby
