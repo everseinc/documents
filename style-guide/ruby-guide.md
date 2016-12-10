@@ -61,8 +61,8 @@ y = -> (x) {x * x}
 
 - Functor
 
-定義 : Functor moduleをincludeしたクラス
-mapをoverrideして、map処理が定義されたものをFunctorとし、Procクラスを拡張した <= メソッドでの記述を推奨
+定義 : Functor moduleをincludeしたクラス  
+mapをoverrideして、map処理が定義されたものをFunctorとし、Procクラスを拡張した `<=` メソッドでの記述を推奨
 
 ```ruby
 # functor
@@ -75,8 +75,8 @@ f <= arr
 
 - Applicative
 
-定義 : Applicative moduleをincludeしたクラス
-applicateをoverrideして、applicate処理が定義されたものをApplicativeとし、alias_methodである > メソッドでの記述を推奨
+定義 : Applicative moduleをincludeしたクラス  
+applicateをoverrideして、applicate処理が定義されたものをApplicativeとし、alias_methodである `>` メソッドでの記述を推奨
 
 ```ruby
 :gsub.to_proc.curry(3) <= ["hi", "hello"] > [/h/] > ["f"]
@@ -97,7 +97,7 @@ g = f.curry(3)
 #=>   }
 #=> }
 
-h = :gsub.to_proc.curry(3) <= ["hi", "hello"]
+h = g <= ["hi", "hello"]
 #=> [
 #=>   { |a|
 #=>     { |b|
@@ -111,7 +111,7 @@ h = :gsub.to_proc.curry(3) <= ["hi", "hello"]
 #=>   }
 #=> [
 
-h = :gsub.to_proc.curry(3) <= ["hi", "hello"] > [/h/]
+i = h > [/h/]
 #=> [
 #=>   { |b|
 #=>     "hi".gsub(/h/, b)
@@ -121,7 +121,7 @@ h = :gsub.to_proc.curry(3) <= ["hi", "hello"] > [/h/]
 #=>   }
 #=> [
 
-:gsub.to_proc.curry(3) <= ["hi", "hello"] > [/h/] > ["f"]
+i > ["f"]
 #=> [
 #=>   "hi".gsub(/h/, "f"),
 #=>   "hello".gsub(/h/, "f")
