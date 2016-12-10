@@ -1,0 +1,24 @@
+setting list
+
+ User Account Management
+  changing by mysql command, not setting file
+    1. setting the password(test) for all root account
+    2. drop accounts which don't have name
+
+ Setting encode UTF-8
+  add these sentences to /etc/my.cnf
+    character_set_server=utf8
+    skip-character-set-client-handshake
+
+ Setting timezone for Japan
+  1. import Time-zone data by unix command
+    $ /usr/bin/mysql_tzinfo_to_sql /usr/share/zoneinfo > ~/timezone.sql
+    $ mysql -u root -p -Dmysql < ~/timezone.sql
+  2. changing /etc/my.cnf and add this sentence under the line "[mysqld]"
+    default-time-zone = 'Asia/Tokyo'
+
+
+
+
+
+
